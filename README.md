@@ -14,7 +14,7 @@ This repository is a Julia sample codes collection of basic programming.
 I hope this repository will be useful for a lot of people to study Julia programming.  
 
 ## Requirements
-* Julia 1.4.2
+* Julia 1.5.0
 
 ## How to use
 1. Clone this repository.
