@@ -26,8 +26,10 @@ I hope this repository will be useful for a lot of people to study Julia program
 All codes are at "src" directory.  
 Under "src" directory, there are the following sample code directories.  
 
-* [HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)
-* [Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)
+|Directory|Content|
+|------------|-------|
+|[HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)|Output "Hello World"|
+|[Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)|Four arithmetic operations|
 
 ## License
 All codes in this repository are released under the MIT License.  
