@@ -10,7 +10,15 @@ function divide(a, b)
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    a = 18
-    b = 2
-    println("$a ÷ $b = $(divide(a, b))")
+    a = 4
+    b = 3
+    println("a = $a, b = $b")
+    println("a / b = $(divide(a, b))")
+    println()
+    println("divide round to 0")
+    println("div(a, b) = ", div(a, b))
+    println()
+    println("remainder")
+    println("a % b = ", a % b)
+    println("rem(a, b) = ", rem(a, b))
 end
