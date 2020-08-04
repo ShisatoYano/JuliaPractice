@@ -10,6 +10,7 @@ function add(a, b)
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    answer = add(2, 5)
-    println(answer)
+    a = 5
+    b = 9
+    println("$a + $b = $(add(a, b))")
 end
