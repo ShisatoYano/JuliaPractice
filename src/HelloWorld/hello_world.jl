@@ -6,8 +6,11 @@ hello_world:
 =#
 
 module HelloWorld
+    is_ok = false
     function show_hello_world()
         println("Hello world!!")
+        is_ok = true
+        return is_ok
     end
 end
 
