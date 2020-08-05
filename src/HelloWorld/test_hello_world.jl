@@ -6,10 +6,17 @@ test_hello_world:
 =#
 
 module TestHelloWorld
+    # packages
     using Test
+
+    # external modules
     include("hello_world.jl")
+
+    # methods
     function test()
-        @test HelloWorld.show_hello_world() == true
+        @testset "HelloWorld" begin
+            @test HelloWorld.show_hello_world() == true
+        end
     end
 end
 
