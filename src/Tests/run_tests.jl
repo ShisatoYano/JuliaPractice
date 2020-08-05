@@ -22,5 +22,5 @@ end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .TestsRunner
-    TestsRunner.run_tests()
+    @time TestsRunner.run_tests()
 end

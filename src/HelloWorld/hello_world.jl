@@ -6,11 +6,9 @@ hello_world:
 =#
 
 module HelloWorld
-    # valuables
-    is_ok = false
-
     # methods
     function show_hello_world()
+        is_ok = false
         println("Hello world!!")
         is_ok = true
         return is_ok
