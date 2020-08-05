@@ -11,6 +11,7 @@ module TestModule
 
     # extarnel modules
     include("simple_module.jl")
+    include("nest_module.jl")
 
     # methods
     function test()
@@ -19,6 +20,12 @@ module TestModule
                 @test SimpleModule.hoge == 2
                 @test SimpleModule.hello("Julia") == true
                 @test SimpleModule.goodbye("Julia") == true
+            end
+
+            @testset "NestModule" begin
+                @test NestModule.name == "Julia"
+                @test NestModule.Hello.hello(NestModule.name) == true
+                @test NestModule.Bye.byebye(NestModule.name) == true
             end
         end
     end

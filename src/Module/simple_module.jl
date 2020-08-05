@@ -2,7 +2,7 @@
 simple_module:
 - Julia version: 1.5.0
 - Author: shisa
-- Date: 2020-08-05
+- Date: 2020-08-06
 =#
 
 module SimpleModule
