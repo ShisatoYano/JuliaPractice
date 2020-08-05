@@ -5,21 +5,25 @@ simple_module:
 - Date: 2020-08-05
 =#
 
-module Greeting
-    # define function
-    hello(name) = println("Hello $(name)!!")
-    goodbye(name) = println("Goodbye $(name)!!")
-
-    # define valuable
+module SimpleModule
+    # values
     hoge = 2
 
-    # implicitly imported
-    export goodbye
+    # methods
+    function hello(name)
+        println("Hello $(name)!!")
+        return true
+    end
+
+    function goodbye(name)
+        println("Goodbye $(name)!!")
+        return true
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    using .Greeting
-    Greeting.hello("Julia")
-    println("Greeting.hoge = ", Greeting.hoge)
-    goodbye("Julia")
+    using .SimpleModule
+    SimpleModule.hello("Julia")
+    println("SimpleModule.hoge = ", SimpleModule.hoge)
+    SimpleModule.goodbye("Julia")
 end

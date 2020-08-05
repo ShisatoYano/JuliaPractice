@@ -8,10 +8,8 @@ hello_world:
 module HelloWorld
     # methods
     function show_hello_world()
-        is_ok = false
         println("Hello world!!")
-        is_ok = true
-        return is_ok
+        return true
     end
 end
 
