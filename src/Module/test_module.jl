@@ -30,3 +30,8 @@ module TestModule
         end
     end
 end
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    using. TestModule
+    TestModule.test()
+end

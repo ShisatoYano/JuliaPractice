@@ -12,12 +12,14 @@ module TestsRunner
     # external modules
     include("../HelloWorld/test_hello_world.jl")
     include("../Module/test_module.jl")
+    include("../Operations/test_operations.jl")
 
     # methods
     function run_tests()
         @testset "JuliaPractice" begin
             TestHelloWorld.test()
             TestModule.test()
+            TestOperations.test()
         end
     end
 end
