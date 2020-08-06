@@ -15,7 +15,6 @@ module NestModule
 
         function hello(name)
             println("Hello $(name)!!")
-            return true
         end
     end
 
@@ -25,7 +24,6 @@ module NestModule
 
         function byebye(name)
             println("Byebye $(name)!!")
-            return true
         end
     end
 

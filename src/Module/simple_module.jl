@@ -12,12 +12,10 @@ module SimpleModule
     # methods
     function hello(name)
         println("Hello $(name)!!")
-        return true
     end
 
     function goodbye(name)
         println("Goodbye $(name)!!")
-        return true
     end
 end
 

@@ -18,14 +18,14 @@ module TestModule
         @testset "Module" begin
             @testset "SimpleModule" begin
                 @test SimpleModule.hoge == 2
-                @test SimpleModule.hello("Julia") == true
-                @test SimpleModule.goodbye("Julia") == true
+                @test_nowarn SimpleModule.hello("Julia")
+                @test_nowarn SimpleModule.goodbye("Julia")
             end
 
             @testset "NestModule" begin
                 @test NestModule.name == "Julia"
-                @test NestModule.Hello.hello(NestModule.name) == true
-                @test NestModule.Bye.byebye(NestModule.name) == true
+                @test_nowarn NestModule.Hello.hello(NestModule.name)
+                @test_nowarn NestModule.Bye.byebye(NestModule.name)
             end
         end
     end
