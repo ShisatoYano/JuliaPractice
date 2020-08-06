@@ -29,7 +29,9 @@ Under "src" directory, there are the following sample code directories.
 |Directory|Content|
 |------------|-------|
 |[HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)|Output "Hello World"|
+|[Module](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Module)|Module definition|
 |[Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)|Four arithmetic operations|
+|[Tests](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Tests)|Unit tests for each modules|
 
 ## License
 All codes in this repository are released under the MIT License.  
