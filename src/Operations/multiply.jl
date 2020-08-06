@@ -2,20 +2,23 @@
 multiply:
 - Julia version: 1.5.0
 - Author: shisa
-- Date: 2020-08-04
+- Date: 2020-08-06
 =#
 
-function multiply(a, b)
-    return a * b
+module Multiplication
+    function multiply(a, b)
+        return a * b
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
+    using .Multiplication
     a = 15
     b = 12
     println("a = $a, b = $b")
     println()
     println("use *")
-    println("a * b = $(multiply(a, b))")
+    println("a * b = $(Multiplication.multiply(a, b))")
     println()
     println("omit *")
     println("2a + b = $(2a + b)")
