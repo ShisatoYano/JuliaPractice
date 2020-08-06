@@ -9,7 +9,6 @@ module HelloWorld
     # methods
     function show_hello_world()
         println("Hello world!!")
-        return true
     end
 end
 
