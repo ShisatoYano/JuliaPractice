@@ -13,6 +13,7 @@ module TestsRunner
     include("../HelloWorld/test_hello_world.jl")
     include("../Module/test_module.jl")
     include("../Operations/test_operations.jl")
+    include("../ComplexNumber/test_complex_number.jl")
 
     # methods
     function run_tests()
@@ -20,6 +21,7 @@ module TestsRunner
             TestHelloWorld.test()
             TestModule.test()
             TestOperations.test()
+            TestCompNum.test()
         end
     end
 end
