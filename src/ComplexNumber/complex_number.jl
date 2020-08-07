@@ -6,38 +6,38 @@ complex_number:
 =#
 
 module CompNum
-        # expressions
-        expr1 = 1 + 2im
-        expr2 = 2 - 3im
+    # expressions
+    expr1 = 1 + 2im
+    expr2 = 2 - 3im
 
-        # methods
-        function get_expr1()
-            return expr1
-        end
+    # methods
+    function get_expr1()
+        return expr1
+    end
 
-        function get_expr2()
-            return expr2
-        end
+    function get_expr2()
+        return expr2
+    end
 
-        function multiply(expr1, expr2)
-            return expr1 * expr2
-        end
+    function multiply(expr1, expr2)
+        return expr1 * expr2
+    end
 
-        function get_real(expr)
-            return real(expr)
-        end
+    function get_real(expr)
+        return real(expr)
+    end
 
-        function get_imag(expr)
-            return imag(expr)
-        end
+    function get_imag(expr)
+        return imag(expr)
+    end
 
-        function get_conj(expr)
-            return conj(expr)
-        end
+    function get_conj(expr)
+        return conj(expr)
+    end
 
-        function get_abs(expr)
-            return abs(expr)
-        end
+    function get_abs(expr)
+        return abs(expr)
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
