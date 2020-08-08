@@ -32,6 +32,7 @@ Under "src" directory, there are the following sample code directories.
 |[HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)|Output "Hello World"|
 |[Module](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Module)|Module definition and how to use as external module|
 |[Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)|Four arithmetic operations|
+|[String](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/String)|String operations and functions|
 |[Tests](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Tests)|Unit tests for each modules|
 
 ## License
