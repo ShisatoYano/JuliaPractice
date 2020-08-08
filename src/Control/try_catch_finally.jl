@@ -27,6 +27,7 @@ module TryCatchFinally
             println("get char[5]")
             char = get_char(5)
             println("char is $(char)")
+            return char
         end
     end
 end

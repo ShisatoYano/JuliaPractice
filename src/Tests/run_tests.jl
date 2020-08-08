@@ -15,20 +15,22 @@ module TestsRunner
     include("../Operations/test_operations.jl")
     include("../ComplexNumber/test_complex_number.jl")
     include("../String/test_string.jl")
+    include("../Control/test_control.jl")
 
     # methods
-    function run_tests()
+    function tests()
         @testset "JuliaPractice" begin
             TestHelloWorld.test()
             TestModule.test()
             TestOperations.test()
             TestCompNum.test()
             TestString.test()
+            TestControl.test()
         end
     end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .TestsRunner
-    @time TestsRunner.run_tests()
+    @time TestsRunner.tests()
 end
