@@ -28,8 +28,9 @@ Under "src" directory, there are the following sample code directories.
 
 |Directory|Content|
 |------------|-------|
+|[ComplexNumber](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/ComplexNumber)|Definition and basic function for complex number|
 |[HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)|Output "Hello World"|
-|[Module](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Module)|Module definition|
+|[Module](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Module)|Module definition and how to use as external module|
 |[Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)|Four arithmetic operations|
 |[Tests](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Tests)|Unit tests for each modules|
 
