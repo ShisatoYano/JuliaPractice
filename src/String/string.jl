@@ -2,7 +2,7 @@
 string:
 - Julia version: 1.5.0
 - Author: shisa
-- Date: 2020-08-07
+- Date: 2020-08-08
 =#
 
 module String

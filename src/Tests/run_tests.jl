@@ -2,7 +2,7 @@
 run_tests:
 - Julia version: 1.5.0
 - Author: shisa
-- Date: 2020-08-05
+- Date: 2020-08-08
 =#
 
 module TestsRunner
@@ -14,6 +14,7 @@ module TestsRunner
     include("../Module/test_module.jl")
     include("../Operations/test_operations.jl")
     include("../ComplexNumber/test_complex_number.jl")
+    include("../String/test_string.jl")
 
     # methods
     function run_tests()
@@ -22,6 +23,7 @@ module TestsRunner
             TestModule.test()
             TestOperations.test()
             TestCompNum.test()
+            TestString.test()
         end
     end
 end
