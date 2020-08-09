@@ -17,6 +17,7 @@ module TestsRunner
     include("../String/test_string.jl")
     include("../Control/test_control.jl")
     include("../Type/test_types.jl")
+    include("../Collection/test_collection.jl")
 
     # methods
     function tests()
@@ -28,6 +29,7 @@ module TestsRunner
             TestString.test()
             TestControl.test()
             TestTypes.test()
+            TestCollection.test()
         end
     end
 end
