@@ -38,21 +38,25 @@ module CompNum
     function get_abs(expr)
         return abs(expr)
     end
+
+    function main()
+        expr_1 = get_expr1()
+        expr_2 = get_expr2()
+        println("Expr1 = ", expr_1)
+        println("Expr2 = ", expr_2)
+        println("Expr1 * Expr2 = ", multiply(expr_1, expr_2))
+        println("Real of expr1 = ", get_real(expr_1))
+        println("Imag of expr1 = ", get_imag(expr_1))
+        println("Conj of expr1 = ", get_conj(expr_1))
+        println("Abs of expr1 = ", get_abs(expr_1))
+        println("Real of expr2 = ", get_real(expr_2))
+        println("Imag of expr2 = ", get_imag(expr_2))
+        println("Conj of expr2 = ", get_conj(expr_2))
+        println("Abs of expr2 = ", get_abs(expr_2))
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .CompNum
-    expr1 = CompNum.get_expr1()
-    expr2 = CompNum.get_expr2()
-    println("Expr1 = ", expr1)
-    println("Expr2 = ", expr2)
-    println("Expr1 * Expr2 = ", CompNum.multiply(expr1, expr2))
-    println("Real of expr1 = ", CompNum.get_real(expr1))
-    println("Imag of expr1 = ", CompNum.get_imag(expr1))
-    println("Conj of expr1 = ", CompNum.get_conj(expr1))
-    println("Abs of expr1 = ", CompNum.get_abs(expr1))
-    println("Real of expr2 = ", CompNum.get_real(expr2))
-    println("Imag of expr2 = ", CompNum.get_imag(expr2))
-    println("Conj of expr2 = ", CompNum.get_conj(expr2))
-    println("Abs of expr2 = ", CompNum.get_abs(expr2))
+    CompNum.main()
 end
