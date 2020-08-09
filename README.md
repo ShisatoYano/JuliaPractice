@@ -35,6 +35,7 @@ Under "src" directory, there are the following sample code directories.
 |[Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)|Four arithmetic operations|
 |[String](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/String)|String operations and functions|
 |[Tests](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Tests)|Unit tests for each modules|
+|[Type](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Type)|Different types definition|
 
 ## License
 All codes in this repository are released under the MIT License.  
