@@ -16,6 +16,7 @@ module TestsRunner
     include("../ComplexNumber/test_complex_number.jl")
     include("../String/test_string.jl")
     include("../Control/test_control.jl")
+    include("../Type/test_types.jl")
 
     # methods
     function tests()
@@ -26,6 +27,7 @@ module TestsRunner
             TestCompNum.test()
             TestString.test()
             TestControl.test()
+            TestTypes.test()
         end
     end
 end
