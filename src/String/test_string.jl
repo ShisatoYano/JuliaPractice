@@ -15,13 +15,8 @@ module TestString
     # method
     function test()
         @testset "String" begin
-            @test String.get_str1() == "Hello Julia"
-            @test String.get_str1_char(1) == 'H'
-            @test_throws BoundsError String.get_str1_char(0)
-            @test String.get_str2() == "こんにちは、Julia"
-            @test String.get_str2_unicode(1) == 'こ'
             @test_throws StringIndexError String.get_str2_unicode(2)
-            @test_nowarn String.connect_str("Julia", "Lang")
+            @test_nowarn String.main()
         end
     end
 end
