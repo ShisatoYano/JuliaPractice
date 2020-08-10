@@ -28,6 +28,7 @@ Under "src" directory, there are the following sample code directories.
 
 |Directory|Content|
 |------------|-------|
+|[Collection](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Collection)|Tuple, list, set and dictionary|
 |[ComplexNumber](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/ComplexNumber)|Definition and basic function for complex number|
 |[Control](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Control)|Control syntax|
 |[HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)|Output "Hello World"|
