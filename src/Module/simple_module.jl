@@ -17,11 +17,15 @@ module SimpleModule
     function goodbye(name)
         println("Goodbye $(name)!!")
     end
+
+    function main()
+        hello("Julia")
+        println("SimpleModule.hoge = ", hoge)
+        goodbye("Julia")
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .SimpleModule
-    SimpleModule.hello("Julia")
-    println("SimpleModule.hoge = ", SimpleModule.hoge)
-    SimpleModule.goodbye("Julia")
+    SimpleModule.main()
 end

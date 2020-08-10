@@ -27,11 +27,14 @@ module NestModule
         end
     end
 
+    function main()
+        println("NestModule.name = ", name)
+        Hello.hello(name)
+        Bye.byebye(name)
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .NestModule
-    println("NestModule.name = ", NestModule.name)
-    NestModule.Hello.hello(NestModule.name)
-    NestModule.Bye.byebye(NestModule.name)
+    NestModule.main()
 end

@@ -17,15 +17,11 @@ module TestModule
     function test()
         @testset "Module" begin
             @testset "SimpleModule" begin
-                @test SimpleModule.hoge == 2
-                @test_nowarn SimpleModule.hello("Julia")
-                @test_nowarn SimpleModule.goodbye("Julia")
+                @test_nowarn SimpleModule.main()
             end
 
             @testset "NestModule" begin
-                @test NestModule.name == "Julia"
-                @test_nowarn NestModule.Hello.hello(NestModule.name)
-                @test_nowarn NestModule.Bye.byebye(NestModule.name)
+                @test_nowarn NestModule.main()
             end
         end
     end
