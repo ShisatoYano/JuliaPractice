@@ -19,20 +19,16 @@ module TestOperations
     function test()
         @testset "Operations" begin
             @testset "Add" begin
-                @test Add.add(10, 4) == 14
-                @test Add.add(30, -12) == 18
+                @test_nowarn Add.main()
             end
             @testset "Division" begin
-                @test Division.divide(75, 5) == 15
-                @test Division.divide(36, -6) == -6
+                @test_nowarn Division.main()
             end
             @testset "Multiplication" begin
-                @test Multiplication.multiply(12, 12) == 144
-                @test Multiplication.multiply(0, 155) == 0
+                @test_nowarn Multiplication.main()
             end
             @testset "Subtraction" begin
-                @test Subtraction.subtract(12, 100) == -88
-                @test Subtraction.subtract(196, 78) == 118
+                @test_nowarn Subtraction.main()
             end
         end
     end
