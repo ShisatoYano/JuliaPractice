@@ -13,12 +13,16 @@ module UnionTypes
     function get_union_type(x::IntOrString)
         return typeof(x)
     end
+
+    function main()
+        println("Type(x=10) = ", get_union_type(10))
+        println("Type(x='Hello') = ", get_union_type("Hello"))
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .UnionTypes
-    println("Type(x=10) = ", UnionTypes.get_union_type(10))
-    println("Type(x='Hello') = ", UnionTypes.get_union_type("Hello"))
+    UnionTypes.main()
 end
 
 
