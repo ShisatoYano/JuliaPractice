@@ -15,7 +15,7 @@ module TestHelloWorld
     # methods
     function test()
         @testset "HelloWorld" begin
-            @test_nowarn HelloWorld.show_hello_world()
+            @test_nowarn HelloWorld.main()
         end
     end
 end

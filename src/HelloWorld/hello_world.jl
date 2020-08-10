@@ -7,12 +7,12 @@ hello_world:
 
 module HelloWorld
     # methods
-    function show_hello_world()
+    function main()
         println("Hello world!!")
     end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .HelloWorld
-    HelloWorld.show_hello_world()
+    HelloWorld.main()
 end
