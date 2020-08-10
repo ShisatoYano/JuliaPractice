@@ -30,9 +30,13 @@ module TryCatchFinally
             return char
         end
     end
+
+    function main()
+        catch_error()
+    end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .TryCatchFinally
-    TryCatchFinally.catch_error()
+    TryCatchFinally.main()
 end

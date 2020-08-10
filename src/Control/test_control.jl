@@ -18,20 +18,15 @@ module TestControl
     function test()
         @testset "Control" begin
             @testset "If" begin
-                @test If.get_greater_value(12, 8) == 12
-                @test If.get_greater_value(-2, 50) == 50
-                @test If.get_greater_value(3, 3) == nothing
-                @test If.check_greater_0(37) == true
-                @test If.check_greater_0(-100) == false
+                @test_nowarn If.main()
                 @test_throws ErrorException If.check_negative_value(40)
                 @test_throws ErrorException If.check_non_negative_value(-40)
             end
             @testset "ForWhile" begin
-                @test_nowarn ForWhile.while_under_val(1000000001)
-                @test_nowarn ForWhile.for_val_times(1000000000)
+                @test_nowarn ForWhile.main()
             end
             @testset "TryCatchFinally" begin
-                @test TryCatchFinally.catch_error() == 'o'
+                @test_nowarn TryCatchFinally.main()
             end
         end
     end
