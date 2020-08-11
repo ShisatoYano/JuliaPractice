@@ -14,7 +14,13 @@ This repository is a Julia sample codes collection of basic programming.
 I hope this repository will be useful for a lot of people to study Julia programming.  
 
 ## Requirements
+Confirmed the behavior of each program at the following version.  
 * Julia 1.5.0
+
+Require the following packages.  
+* Plots 1.5.7
+* LinearAlgebra
+* Test
 
 ## How to use
 1. Clone this repository.
