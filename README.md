@@ -34,6 +34,7 @@ Under "src" directory, there are the following sample code directories.
 
 |Directory|Content|
 |------------|-------|
+|[Array](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Array)|Initialization and basic arithmetic operation for array|
 |[Collection](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Collection)|Tuple, list, set and dictionary|
 |[ComplexNumber](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/ComplexNumber)|Definition and basic function for complex number|
 |[Control](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Control)|Control syntax|
