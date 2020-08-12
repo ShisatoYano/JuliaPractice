@@ -85,7 +85,8 @@ module Plots2D
         ax.set_title("Pie Chart Sample")
     end
 
-    function main()
+    function main(flag)
+        show_plot = flag
         plot_line()
         plot_point()
         plot_over()
@@ -100,5 +101,5 @@ end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .Plots2D
-    Plots2D.main()
+    Plots2D.main(true)
 end
