@@ -18,9 +18,14 @@ Confirmed the behavior of each program at the following version.
 * Julia 1.5.0
 
 Require the following packages.  
+* Conda 1.4.1
 * Plots 1.5.7
+* PyCall 1.91.4
 * LinearAlgebra
-* Test
+
+Require the following version of Python and libraries.
+* Python 3.8.3
+* matplotlib 3.2.2
 
 ## How to use
 1. Clone this repository.
@@ -41,6 +46,7 @@ Under "src" directory, there are the following sample code directories.
 |[HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)|Output "Hello World"|
 |[Module](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Module)|Module definition and how to use as external module|
 |[Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)|Four arithmetic operations|
+|[Plots](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Plots)|Plot 2/3D basic graphs by matplotlib|
 |[String](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/String)|String operations and functions|
 |[Tests](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Tests)|Unit tests for each modules|
 |[Type](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Type)|Different types definition|
