@@ -19,6 +19,7 @@ module TestsRunner
     include("../Type/test_types.jl")
     include("../Collection/test_collection.jl")
     include("../Array/test_array.jl")
+    include("../Plots/test_plots.jl")
 
     # methods
     function tests()
@@ -32,6 +33,7 @@ module TestsRunner
             TestTypes.test()
             TestCollection.test()
             TestArray.test()
+            TestPlots.test()
         end
     end
 end

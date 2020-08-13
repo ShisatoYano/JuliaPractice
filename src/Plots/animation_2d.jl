@@ -15,7 +15,7 @@ module Anime2D
 
     # methods
     function set_show_plot(flag)
-        show_plot = flag
+        global show_plot = flag
     end
 
     function main()

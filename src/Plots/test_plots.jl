@@ -11,12 +11,28 @@ module TestPlots
 
     # external modules
     include("plots_2d.jl")
+    include("plots_3d.jl")
+    include("subplot_2d.jl")
+    include("animation_2d.jl")
 
     # methods
     function test()
         @testset "Plots" begin
             @testset "Plots2D" begin
-                @test_nowarn Plots2D.main(false)
+                Plots2D.set_show_plot(false)
+                @test_nowarn Plots2D.main()
+            end
+            @testset "Plots3D" begin
+                Plots3D.set_show_plot(false)
+                @test_nowarn Plots3D.main()
+            end
+            @testset "SubPlot2D" begin
+                SubPlot2D.set_show_plot(false)
+                @test_nowarn SubPlot2D.main()
+            end
+            @testset "Anime2D" begin
+                Anime2D.set_show_plot(false)
+                @test_nowarn Anime2D.main()
             end
         end
     end

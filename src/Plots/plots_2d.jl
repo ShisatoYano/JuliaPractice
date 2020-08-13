@@ -10,6 +10,13 @@ module Plots2D
     using PyCall
     @pyimport matplotlib.pyplot as plt
 
+    # flag to switch show or not
+    show_plot = true
+
+    function set_show_plot(flag)
+        global show_plot = flag
+    end
+
     # method
     function plot_line()
         x = range(0, 2pi, length=100)
@@ -78,7 +85,7 @@ module Plots2D
         ax.set_title("Pie Chart Sample")
     end
 
-    function main(show_plot)
+    function main()
         plot_line()
         plot_point()
         plot_over()

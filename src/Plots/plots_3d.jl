@@ -16,7 +16,7 @@ module Plots3D
 
     # methods
     function set_show_plot(flag)
-        show_plot = flag
+        global show_plot = flag
     end
 
     function plot_point_3d()
