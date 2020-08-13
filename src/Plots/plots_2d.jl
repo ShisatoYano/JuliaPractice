@@ -100,5 +100,5 @@ end
 
 if abspath(PROGRAM_FILE) == @__FILE__
     using .Plots2D
-    Plots2D.main(true)
+    Plots2D.main()
 end
