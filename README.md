@@ -22,6 +22,11 @@ Require the following packages.
 * Plots 1.5.7
 * PyCall 1.91.4
 * LinearAlgebra
+* DataFrames 0.21.6
+* CSV 0.7.7
+* JSON 0.21.0
+* PyPlot 2.9.0
+* Statistics
 
 Require the following version of Python and libraries.
 * Python 3.8.3
@@ -43,6 +48,7 @@ Under "src" directory, there are the following sample code directories.
 |[Collection](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Collection)|Tuple, list, set and dictionary|
 |[ComplexNumber](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/ComplexNumber)|Definition and basic function for complex number|
 |[Control](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Control)|Control syntax|
+|[DataFrames](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/DataFrames)|DataFrame creation and operation|
 |[HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)|Output "Hello World"|
 |[Module](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Module)|Module definition and how to use as external module|
 |[Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)|Four arithmetic operations|
