@@ -20,6 +20,7 @@ module TestsRunner
     include("../Collection/test_collection.jl")
     include("../Array/test_array.jl")
     include("../Plots/test_plots.jl")
+    include("../DataFrames/test_df.jl")
 
     # methods
     function tests()
@@ -34,6 +35,7 @@ module TestsRunner
             TestCollection.test()
             TestArray.test()
             TestPlots.test()
+            TestDf.test()
         end
     end
 end
