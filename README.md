@@ -62,4 +62,4 @@ All codes in this repository are released under the MIT License.
 If you want to know in detail, please see LICENSE file.  
 
 ## Author
-* [Shisato Yano](https://github.com/ShisatoYano)
+* [Shisato Yano](https://github.com/ShisatoYano) ([@4310sy](https://twitter.com/4310sy))
