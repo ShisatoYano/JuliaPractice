@@ -14,11 +14,7 @@ module MyQueue
 
     # methods
     function get_next_idx(n)
-        if (n + 1) == size
-            return size
-        else
-            return (n + 1) % size
-        end
+        return (n + 1) % size
     end
 
     function enqueue(n)
@@ -27,9 +23,9 @@ module MyQueue
             println("Queue is full")
             return false
         end
+        println("Enqueue: $(tail)")
         list[tail] = n
         tail = get_next_idx(tail)
-        println("Enqueue:$(tail) Dequeue:$(head)")
     end
 
     function dequeue()
@@ -38,13 +34,13 @@ module MyQueue
             println("Queue is empty")
             return false
         end
+        println("Dequeue: $(head)")
         n = list[head]
         head = get_next_idx(head)
-        println("Enqueue:$(tail) Dequeue:$(head)")
     end
 
     function main()
-        println("Enqueue:$(tail) Dequeue:$(head)")
+        println("List size = $(size)")
         for idx in 1:size
             enqueue(idx)
         end
