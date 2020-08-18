@@ -2,12 +2,12 @@
 my_queue:
 - Julia version: 1.5.0
 - Author: shisa
-- Date: 2020-08-17
+- Date: 2020-08-18
 =#
 
 module MyQueue
     # variables
-    queue_size = 10 # num of elements in array
+    queue_size = 10 # max size of array
     queue_head = 1 # index of next deque
     queue_num = 0
     queue_data = [0 for i in 1:queue_size] # data
