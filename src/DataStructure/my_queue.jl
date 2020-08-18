@@ -7,47 +7,64 @@ my_queue:
 
 module MyQueue
     # variables
-    size = 100
-    head = 1
-    tail = 1
-    list = [0 for i in 1:size]
-
-    # methods
-    function get_next_idx(n)
-        return (n + 1) % size
-    end
+    queue_size = 10 # num of elements in array
+    queue_head = 1 # index of next deque
+    queue_num = 0
+    queue_data = [0 for i in 1:queue_size] # data
 
     function enqueue(n)
-        global head, tail
-        if head == get_next_idx(tail)
-            println("Queue is full")
+        global queue_num
+        if queue_num < queue_size
+            en_idx = (queue_head + queue_num) % queue_size
+            if en_idx == 0
+                en_idx = queue_size
+            end
+            queue_data[en_idx] = n
+            queue_num += 1
+            println("Enqueue $(n) : $(queue_data)")
+            return true
+        else
+            println("Enqueue $(n) : Queue is full")
             return false
         end
-        println("Enqueue: $(tail)")
-        list[tail] = n
-        tail = get_next_idx(tail)
     end
 
     function dequeue()
-        global head, tail
-        if head == tail
-            println("Queue is empty")
+        global queue_head, queue_num
+        if queue_num > 0
+            deq_data = queue_data[queue_head]
+            queue_data[queue_head] = 0
+            deq_idx = (queue_head + 1) % queue_size
+            if deq_idx == 0
+                deq_idx = queue_size
+            end
+            queue_head = deq_idx
+            queue_num -= 1
+            println("Dequeue $(deq_data) : $(queue_data)")
+            return true
+        else
             return false
         end
-        println("Dequeue: $(head)")
-        n = list[head]
-        head = get_next_idx(head)
     end
 
     function main()
-        println("List size = $(size)")
-        for idx in 1:size
-            enqueue(idx)
+        # enqueue 1~7 to array
+        for i in 1:7
+            enqueue(i)
         end
-
-        for idx in 1:size
+        # dequeue 1~4 from array
+        for i in 1:4
             dequeue()
         end
+        # enqueue 8~15 to array
+        for i in 8:15
+            enqueue(i)
+        end
+        # dequeue until queue become empty
+        while queue_num > 0
+            dequeue()
+        end
+        println("Queue is empty")
     end
 end
 
