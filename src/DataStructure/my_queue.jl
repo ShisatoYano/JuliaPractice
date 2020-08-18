@@ -7,7 +7,7 @@ my_queue:
 
 module MyQueue
     # variables
-    queue_size = 10 # max size of array
+    const queue_size = 10 # max size of queue
     queue_head = 1 # index of next deque
     queue_num = 0
     queue_data = [0 for i in 1:queue_size] # data
@@ -48,15 +48,15 @@ module MyQueue
     end
 
     function main()
-        # enqueue 1~7 to array
+        # enqueue 1~7 to queue
         for i in 1:7
             enqueue(i)
         end
-        # dequeue 1~4 from array
+        # dequeue 1~4 from queue
         for i in 1:4
             dequeue()
         end
-        # enqueue 8~15 to array
+        # enqueue 8~15 to queue
         for i in 8:15
             enqueue(i)
         end
