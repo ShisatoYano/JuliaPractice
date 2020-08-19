@@ -45,6 +45,11 @@ module MyStack
         for i in 1:6
             pop()
         end
+        # pop until stack become empty
+        while stack_num > 0
+            pop()
+        end
+        println("Stack is empty")
     end
 end
 
