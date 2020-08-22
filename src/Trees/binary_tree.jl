@@ -3,6 +3,17 @@ binary_tree:
 - Julia version: 1.5.0
 - Author: shisa
 - Date: 2020-08-21
+
+Tree definition
+      A
+    /  \
+   B    H
+  / \
+ C  D
+   / \
+  E   F
+ /
+G
 =#
 
 # define node class like Python
@@ -27,13 +38,31 @@ end
 
 using .node
 
-function preorder(node)
+function pre_order(node)
     if node == nothing
         return
     end
     println(node._label)
-    preorder(node._left)
-    preorder(node._right)
+    pre_order(node._left)
+    pre_order(node._right)
+end
+
+function in_order(node)
+    if node == nothing
+        return
+    end
+    in_order(node._left)
+    println(node._label)
+    in_order(node._right)
+end
+
+function post_order(node)
+    if node == nothing
+        return
+    end
+    post_order(node._left)
+    post_order(node._right)
+    println(node._label)
 end
 
 function main()
@@ -48,7 +77,13 @@ function main()
     root._left._right._left._left = Node('G', nothing, nothing)
 
     println("Pre-Order Traversal")
-    preorder(root)
+    pre_order(root)
+    println("")
+    println("In-Order Traversal")
+    in_order(root)
+    println("")
+    println("Post-Order Traversal")
+    post_order(root)
     println("")
 end
 
