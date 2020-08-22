@@ -77,13 +77,13 @@ function main()
     root._left._right._left._left = Node('G', nothing, nothing)
 
     println("Pre-Order Traversal")
-    pre_order(root)
+    @time pre_order(root)
     println("")
     println("In-Order Traversal")
-    in_order(root)
+    @time in_order(root)
     println("")
     println("Post-Order Traversal")
-    post_order(root)
+    @time post_order(root)
     println("")
 end
 
