@@ -8,6 +8,7 @@ min_heap:
 # heap list
 heap_list = [0]
 current_size = 0
+input_list = [9, 6, 5, 2, 3]
 
 # method to percolate a new item
 # as far up in the tree as it needs to
@@ -32,21 +33,50 @@ function insert(element)
     perc_up(current_size)
 end
 
+function min_child_idx(idx)
+    if (idx * 2 + 1) > current_size
+        return idx * 2
+    else
+        if heap_list[idx * 2] < heap_list[idx * 2 + 1]
+            return idx * 2
+        else
+            return idx * 2 + 1
+        end
+    end
+end
+
+# method to swap the root with its smallest
+# child less than the root. For percolating
+# a node down the tree.
+function perc_down(idx)
+    while (idx * 2) <= current_size
+        mc_idx = min_child_idx(idx)
+        if heap_list[idx] > heap_list[mc_idx]
+            tmp = heap_list[idx]
+            heap_list[idx] = heap_list[mc_idx]
+            heap_list[mc_idx] = tmp
+        end
+        idx = mc_idx
+    end
+end
+
+# method to make as it moves the node
+# in an input list into their proper position
+function build_heap(list)
+    println("Building a Heap from List $(list)")
+    i = length(list) ÷ 2
+    global current_size = length(list)
+    global heap_list = list
+    while i > 0
+        perc_down(i)
+        println("i = $(i): $(heap_list)")
+        i -= 1
+    end
+end
+
 function main()
-    # define tree
-#     insert(5)
-#     insert(3)
-#     insert(17)
-#     insert(10)
-#     insert(84)
-#     insert(19)
-#     insert(6)
-#     insert(22)
-#     insert(9)
-#
-#     build_min_heap()
-#
-#     show_heap()
+    println("Input list = $(input_list)")
+    build_heap(input_list)
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
