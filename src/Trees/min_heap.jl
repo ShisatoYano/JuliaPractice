@@ -8,7 +8,7 @@ min_heap:
 # heap list
 heap_list = [0]
 current_size = 0
-input_list = [9, 6, 5, 2, 3]
+input_list = [9, 21, 5, 14, 33, 19, 17, 11, 27, 18]
 
 # method to percolate a new item
 # as far up in the tree as it needs to
@@ -20,6 +20,7 @@ function perc_up(idx)
             heap_list[idx ÷ 2] = heap_list[idx]
             heap_list[idx] = tmp
         end
+        println("i = $(idx): $(heap_list)")
         idx = idx ÷ 2
     end
 end
@@ -28,8 +29,10 @@ end
 # regain the heap structure property by
 # comparing the newly added item with its parent
 function insert(element)
+    println("Insert $(element) to heap")
     push!(heap_list, element)
-    current_size += 1
+    println(heap_list)
+    global current_size += 1
     perc_up(current_size)
 end
 
@@ -74,9 +77,27 @@ function build_heap(list)
     end
 end
 
+# method to remove minimum item from root of heap
+# after removed, restore full compliance with
+# heap structure and heap order policy
+function remove_min()
+    min_item = heap_list[1]
+    println("Remove $(min_item) from heap")
+    heap_list[1] = heap_list[current_size]
+    global current_size -= 1
+    pop!(heap_list)
+    perc_down(1)
+    println(heap_list)
+end
+
 function main()
     println("Input list = $(input_list)")
+    println("")
     build_heap(input_list)
+    println("")
+    insert(7)
+    println("")
+    remove_min()
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__

@@ -56,7 +56,7 @@ Under "src" directory, there are the following sample code directories.
 |[StacksAndQueues](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/StacksAndQueues)|Data structure sample: Stacks and Queues|
 |[String](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/String)|String operations and functions|
 |[Tests](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Tests)|Unit tests for each modules|
-|[Trees](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Trees)|Data structures sample: Trees|
+|[Trees](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Trees)|Binary Tree, Min/Max Heap and Trie(Prefix Tree)|
 |[Type](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Type)|Different types definition|
 
 ## License
