@@ -77,12 +77,25 @@ function insert(element)
     perc_up(current_size)
 end
 
+# method to remove maximum item from root of heap
+# after removed, restore full compliance with
+# heap structure and heap order policy
+function remove_max()
+    max_item = heap_list[1]
+    println("Remove max item $(max_item) from heap")
+    heap_list[1] = heap_list[current_size]
+    global current_size -= 1
+    pop!(heap_list)
+    perc_down(1)
+    println(heap_list)
+end
+
 function main()
     build_heap(input_list)
     println("")
     insert(50)
-#     println("")
-#     remove_min()
+    println("")
+    remove_max()
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__

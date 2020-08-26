@@ -82,7 +82,7 @@ end
 # heap structure and heap order policy
 function remove_min()
     min_item = heap_list[1]
-    println("Remove $(min_item) from heap")
+    println("Remove min item $(min_item) from heap")
     heap_list[1] = heap_list[current_size]
     global current_size -= 1
     pop!(heap_list)
