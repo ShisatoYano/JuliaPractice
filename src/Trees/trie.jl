@@ -54,13 +54,20 @@ function search(key)
     return isempty(p_crawl.children) == false && p_crawl.is_end == true
 end
 
+function show_result(flag)
+    if flag == true
+        return "Present"
+    else
+        return "Not Present"
+    end
+end
+
 function main()
     # input keys
     # use only "a" through "z" and lower case
     keys = ["the", "a", "there", "anaswe", "any", "by", "their"]
 
-    # output
-    output = ["Not present", "Present"]
+    println("Input Keys: $(keys)")
 
     # init root
     global root = get_node()
@@ -70,8 +77,13 @@ function main()
         insert(key)
     end
 
-    # search different key
-    println(search("thaw"))
+    # search different keys
+    println("Search Key: the = $(show_result(search("the")))")
+    println("Search Key: these = $(show_result(search("these")))")
+    println("Search Key: their = $(show_result(search("their")))")
+    println("Search Key: thaw = $(show_result(search("thaw")))")
+    println("Search Key: answer = $(show_result(search("answer")))")
+    println("Search Key: by = $(show_result(search("by")))")
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
