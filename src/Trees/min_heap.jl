@@ -5,6 +5,8 @@ min_heap:
 - Date: 2020-08-23
 =#
 
+module MyMinHeap
+
 # heap list
 heap_list = [0]
 current_size = 0
@@ -100,6 +102,9 @@ function main()
     remove_min()
 end
 
+end
+
 if abspath(PROGRAM_FILE) == @__FILE__
-    main()
+    using .MyMinHeap
+    MyMinHeap.main()
 end
