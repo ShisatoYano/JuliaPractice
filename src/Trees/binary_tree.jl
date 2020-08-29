@@ -16,77 +16,66 @@ Tree definition
 G
 =#
 
-# define node class like Python
-module node
-    export Node
+module MyBinaryTree
 
-    # member variables
+    # Node class
     mutable struct Node
-        _label
-        _right # child node, right
-        _left # child node, left
+        label
+        right
+        left
     end
 
-    # initialization
-    function Node(label::String, right, left)
-        _label = label
-        _right = right
-        _left = left
-        return Node(_label, _right, _left)
+    function pre_order(node)
+        if node == nothing
+            return
+        end
+        println(node.label)
+        pre_order(node.left)
+        pre_order(node.right)
     end
-end
 
-using .node
-
-function pre_order(node)
-    if node == nothing
-        return
+    function in_order(node)
+        if node == nothing
+            return
+        end
+        in_order(node.left)
+        println(node.label)
+        in_order(node.right)
     end
-    println(node._label)
-    pre_order(node._left)
-    pre_order(node._right)
-end
 
-function in_order(node)
-    if node == nothing
-        return
+    function post_order(node)
+        if node == nothing
+            return
+        end
+        post_order(node.left)
+        post_order(node.right)
+        println(node.label)
     end
-    in_order(node._left)
-    println(node._label)
-    in_order(node._right)
-end
 
-function post_order(node)
-    if node == nothing
-        return
+    function main()
+        # define root node
+        root = Node('A', nothing, nothing)
+        root.left = Node('B', nothing, nothing)
+        root.right = Node('H', nothing, nothing)
+        root.left.left = Node('C', nothing, nothing)
+        root.left.right = Node('D', nothing, nothing)
+        root.left.right.left = Node('E', nothing, nothing)
+        root.left.right.right = Node('F', nothing, nothing)
+        root.left.right.left.left = Node('G', nothing, nothing)
+
+        println("Pre-Order Traversal")
+        pre_order(root)
+        println("")
+        println("In-Order Traversal")
+        in_order(root)
+        println("")
+        println("Post-Order Traversal")
+        post_order(root)
     end
-    post_order(node._left)
-    post_order(node._right)
-    println(node._label)
-end
 
-function main()
-    # define binary tree
-    root = Node('A', nothing, nothing)
-    root._left = Node('B', nothing, nothing)
-    root._right = Node('H', nothing, nothing)
-    root._left._left = Node('C', nothing, nothing)
-    root._left._right = Node('D', nothing, nothing)
-    root._left._right._left = Node('E', nothing, nothing)
-    root._left._right._right = Node('F', nothing, nothing)
-    root._left._right._left._left = Node('G', nothing, nothing)
-
-    println("Pre-Order Traversal")
-    @time pre_order(root)
-    println("")
-    println("In-Order Traversal")
-    @time in_order(root)
-    println("")
-    println("Post-Order Traversal")
-    @time post_order(root)
-    println("")
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    main()
+    using .MyBinaryTree
+    MyBinaryTree.main()
 end
