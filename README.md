@@ -50,6 +50,7 @@ Under "src" directory, there are the following sample code directories.
 |[Control](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Control)|Control syntax|
 |[DataFrames](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/DataFrames)|DataFrame creation and operation|
 |[HelloWorld](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/HelloWorld)|Output "Hello World"|
+|[LinkedLists](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/LinkedLists)|Algorithm samples with LinkedList|
 |[Module](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Module)|Module definition and how to use as external module|
 |[Operations](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Operations)|Four arithmetic operations|
 |[Plots](https://github.com/ShisatoYano/JuliaPractice/tree/master/src/Plots)|Plot 2/3D basic graphs by matplotlib|
