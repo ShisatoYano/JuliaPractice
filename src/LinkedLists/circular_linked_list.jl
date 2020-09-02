@@ -37,6 +37,7 @@ module CircularLinkedList
     end
 
     function delete_middle()
+        global head, tail, size
         if head == nothing
             return
         else
@@ -61,6 +62,10 @@ module CircularLinkedList
                     # skip removed node
                     current.next = tmp.next
                     # delete tmp
+                    tmp = nothing
+                else
+                    head = tail = tmp.next
+                    tail.next = head
                     tmp = nothing
                 end
             else
@@ -94,6 +99,13 @@ module CircularLinkedList
 
         println("Original Linked List")
         show_list()
+
+        while head != nothing
+            delete_middle()
+            println("Delete Middle from List")
+            show_list()
+            println("")
+        end
     end
 end
 
