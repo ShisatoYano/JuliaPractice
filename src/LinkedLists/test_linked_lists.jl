@@ -16,6 +16,17 @@ module TestLinkedLists
 
     # methods
     function test()
+        @testset "LinkedLists" begin
+            @testset "LinkedListCreation" begin
+                @test_nowarn LinkedListCreation.main()
+            end
+            @testset "NodeDelete" begin
+                @test_nowarn NodeDelete.main()
+            end
+            @testset "CircularLinkedList" begin
+                @test_nowarn CircularLinkedList.main()
+            end
+        end
     end
 end
 

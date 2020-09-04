@@ -23,6 +23,7 @@ module TestsRunner
     include("../DataFrames/test_df.jl")
     include("../StacksAndQueues/test_stack_queue.jl")
     include("../Trees/test_trees.jl")
+    include("../LinkedLists/test_linked_lists.jl")
 
     # methods
     function tests()
@@ -40,6 +41,7 @@ module TestsRunner
             TestDf.test()
             TestStackQueue.test()
             TestTrees.test()
+            TestLinkedLists.test()
         end
     end
 end
