@@ -7,8 +7,9 @@ subplot_2d:
 
 module SubPlot2D
     # packages
-    using PyCall
-    @pyimport matplotlib.pyplot as plt
+    using PyPlot: plt
+#     using PyCall
+#     @pyimport matplotlib.pyplot as plt
 
     # flag to switch show or not
     show_plot = true

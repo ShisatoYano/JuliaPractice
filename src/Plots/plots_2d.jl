@@ -7,8 +7,7 @@ plots_2d:
 
 module Plots2D
     # packages
-    using PyCall
-    @pyimport matplotlib.pyplot as plt
+    using PyPlot: plt
 
     # flag to switch show or not
     show_plot = true

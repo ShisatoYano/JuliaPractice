@@ -7,8 +7,8 @@ animation_2d:
 
 module Anime2D
     # packages
+    using PyPlot: plt
     using PyCall
-    @pyimport matplotlib.pyplot as plt
     @pyimport PIL.Image as Image
 
     # flag to switch show or not

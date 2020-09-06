@@ -7,8 +7,8 @@ plot_3d:
 
 module Plots3D
     # packages
+    using PyPlot: plt
     using PyCall
-    @pyimport matplotlib.pyplot as plt
     @pyimport mpl_toolkits.mplot3d as mpl3
 
     # flag to switch show or not
