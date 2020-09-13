@@ -8,7 +8,6 @@ create_df:
 module DfCreator
     # packages
     using DataFrames
-    using CSV
 
     # data
     data_mat = [
@@ -51,30 +50,11 @@ module DfCreator
         println("")
     end
 
-    function write_csv()
-        dict = Dict(
-            :A => 1:5,
-            :B => rand(5),
-            :C => ["A", "B", "C", "A", "B"])
-        df_dict = DataFrame(dict)
-        CSV.write("dataframe.csv", df_dict)
-        println("Create CSV from DataFrame")
-        println("")
-    end
-
-    function read_csv()
-        df_csv = CSV.read("dataframe.csv")
-        println("DataFrame from csv = ", df_csv)
-        println("")
-    end
-
     function main()
         mat_2_df()
         add_row_name()
         rv_2_df()
         dict_2_df()
-        write_csv()
-        read_csv()
     end
 end
 
