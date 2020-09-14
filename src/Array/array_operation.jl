@@ -30,7 +30,7 @@ module ArrayOp
     end
 
     function indexing()
-        println("Array C = $B")
+        println("Array D = $B")
         println("B[3, 3] = ", B[3, 3])
         println("B[2, :] = ", B[2,:])
         println("B[:, 1] = ", B[:,1])
