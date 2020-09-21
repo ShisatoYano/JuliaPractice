@@ -24,6 +24,7 @@ module TestsRunner
     include("../StacksAndQueues/test_stack_queue.jl")
     include("../Trees/test_trees.jl")
     include("../LinkedLists/test_linked_lists.jl")
+    include("../Search/test_search.jl")
 
     # methods
     function tests()
@@ -42,6 +43,7 @@ module TestsRunner
             TestStackQueue.test()
             TestTrees.test()
             TestLinkedLists.test()
+            TestSearch.test()
         end
     end
 end
