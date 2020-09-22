@@ -1,5 +1,5 @@
 # JuliaPractice
-Sample codes for studying basic programming with Julia.  
+Sample codes for studying basic Julia programming, Data structures and Algorithms .  
 
 ## Table of contents
 * [About this repository](#about-this-repository)
@@ -10,7 +10,7 @@ Sample codes for studying basic programming with Julia.
 * [Author](#author)
 
 ## About this repository
-This repository is a Julia sample codes collection of basic programming.  
+This repository is a Julia sample codes collection of basic programming, Data structures and Algorithms.  
 I hope this repository will be useful for a lot of people to study Julia programming.  
 
 ## Requirements
