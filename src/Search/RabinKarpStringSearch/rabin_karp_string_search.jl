@@ -27,8 +27,6 @@ module RabinKarpSearch
         len_txt = length(text)
         len_pat = length(pattern)
 
-        found = false
-
         # convert from string to hash value
         hash_txt = get_hash(text[1:len_pat], len_pat)
         hash_pat = get_hash(pattern[1:len_pat], len_pat)
@@ -37,8 +35,8 @@ module RabinKarpSearch
         for i in 1:(len_txt)
             if hash_txt == hash_pat
                 if text[i:i+len_pat-1] == pattern
-                    found = true
                     println("Found at index:$(i)~$(i+len_pat-1)")
+                    return i
                 end
             end
             # prevent bounds error
@@ -51,15 +49,14 @@ module RabinKarpSearch
             hash_txt = hash_txt + (Int(text[i+len_pat]) * (cardinal^0))
         end
 
-        if found == false
-            println("Pattern not found")
-        end
+        println("Pattern not found")
+        return -1
     end
 
     function main()
-        @time rabin_karp_search("Hello sunshine", "sun")
-        @time rabin_karp_search("GEEKS FOR GEEKS", "GEEKS")
-        @time rabin_karp_search("aaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbb")
+        @time println(rabin_karp_search("Hello sunshine", "sun"))
+        @time println(rabin_karp_search("GEEKS FOR GEEKS", "GEEKS"))
+        @time println(rabin_karp_search("aaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbb"))
     end
 end
 
