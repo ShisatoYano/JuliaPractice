@@ -16,26 +16,27 @@ module UniqueCharChecker
 
         if length(str) > max_len
             println("Too long string")
-            return
+            return false
         end
 
         char_set = [false for i in 1:max_len]
 
         for j in 1:length(str)
             ascii = Int(str[j]) # used as idx of char_set
-            if char_set[ascii]
+            if char_set[ascii] == true
                 println("Not unique string")
-                return
+                return false
             end
             char_set[ascii] = true
         end
         println("Unique string")
+        return true
     end
 
     function main()
-        @time check_unique("abcdefg")
-        @time check_unique("aaaaaaaaaaaa")
-        @time check_unique("aAbBcCdD")
+        @time println(check_unique("abcdefg"))
+        @time println(check_unique("aaaaaaaaaaaa"))
+        @time println(check_unique("aAbBcCdD"))
     end
 end
 
