@@ -17,18 +17,19 @@ module UniqueCharChecker
             val = str[i] - 'a'
             if (checker & (1 << val)) > 0
                 println("Not unique string")
-                return
+                return false
             end
             checker |= (1 << val)
         end
 
         println("Unique string")
+        return true
     end
 
     function main()
-        @time check_unique("abcdefg")
-        @time check_unique("aaaaaaaaaaaa")
-        @time check_unique("axgilnrewqczpoh")
+        @time println(check_unique("abcdefg"))
+        @time println(check_unique("aaaaaaaaaaaa"))
+        @time println(check_unique("axgilnrewqczpoh"))
     end
 end
 
