@@ -16,7 +16,9 @@ module TestSearch
     function test()
         @testset "Search" begin
             @testset "RabinKarpSearch" begin
-                @test_nowarn RabinKarpSearch.main()
+                @test RabinKarpSearch.rabin_karp_search("Hello sunshine", "sun") == 7
+                @test RabinKarpSearch.rabin_karp_search("GEEKS FOR GEEKS", "GEEKS") == 1
+                @test RabinKarpSearch.rabin_karp_search("aaaaaaaaaaaa", "bbb") == -1
             end
         end
     end
