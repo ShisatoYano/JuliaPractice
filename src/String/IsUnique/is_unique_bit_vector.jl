@@ -5,7 +5,7 @@ is_unique_bit_vector:
 - Date: 2020-09-23
 =#
 
-module UniqueCharChecker
+module UniqueCharBitChecker
     # methods
     function check_unique(str)
         println("")
@@ -34,6 +34,6 @@ module UniqueCharChecker
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    using .UniqueCharChecker
+    using .UniqueCharBitChecker
     UniqueCharChecker.main()
 end
