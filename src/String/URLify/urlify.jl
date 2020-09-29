@@ -37,8 +37,19 @@ module URLify
 
         # fill rest of string from end
         for i in (len_str):-1:1
-            println(str_sub[i])
+            if str_sub[i] == " "
+                str_sub[index] = "0"
+                str_sub[index - 1] = "2"
+                str_sub[index - 2] = "%"
+                index -= 3
+            else
+                str_sub[index] = str_sub[i]
+                index -= 1
+            end
+            println("$(i), $(str_sub[i]), $(str_sub)")
         end
+
+        return join(str_sub)
     end
 
     function main()
