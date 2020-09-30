@@ -15,6 +15,7 @@ module TestString
     include("IsUnique/is_unique_bit_vector.jl")
     include("Permutation/check_permutation_sort.jl")
     include("Permutation/check_permutation_count.jl")
+    include("URLify/urlify.jl")
 
     # method
     function test()
@@ -36,6 +37,10 @@ module TestString
             @test CountPermuChecker.check_permu_count("test", "sett") == true
             @test CountPermuChecker.check_permu_count("abcdefg", "aabbccd") == false
             @test CountPermuChecker.check_permu_count("geeksfor", "forgeeks") == true
+        end
+        @testset "URLify" begin
+            @test URLify.replace_space(" Mr John Smith ") == "Mr%20John%20Smith"
+            @test URLify.replace_space("GEEKS FOR GEEKS   ") == "GEEKS%20FOR%20GEEKS"
         end
     end
 end
