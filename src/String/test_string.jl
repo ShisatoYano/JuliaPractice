@@ -16,6 +16,7 @@ module TestString
     include("Permutation/check_permutation_sort.jl")
     include("Permutation/check_permutation_count.jl")
     include("URLify/urlify.jl")
+    include("Rotation/rotate_string.jl")
 
     # method
     function test()
@@ -41,6 +42,10 @@ module TestString
         @testset "URLify" begin
             @test URLify.replace_space(" Mr John Smith ") == "Mr%20John%20Smith"
             @test URLify.replace_space("GEEKS FOR GEEKS   ") == "GEEKS%20FOR%20GEEKS"
+        end
+        @testset "Rotation" begin
+            @test Rotation.rotate_left("GeeksForGeeks", 2) == "eksForGeeksGe"
+            @test Rotation.rotate_right("GeeksForGeeks", 2) == "ksGeeksForGee"
         end
     end
 end

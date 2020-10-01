@@ -11,8 +11,13 @@ module Rotation
         return str_rot
     end
 
+    function rotate_right(str, num)
+        return rotate_left(str, length(str) - num)
+    end
+
     function main()
         println(rotate_left("GeeksForGeeks", 2))
+        println(rotate_right("GeeksForGeeks", 2))
     end
 end
 
