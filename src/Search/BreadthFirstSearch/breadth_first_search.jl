@@ -22,6 +22,37 @@ module BFS
         right
     end
 
+    function search(root, target)
+        # define empty queue
+        node_que = []
+
+        # add root node to queue
+        push!(node_que, root)
+
+        # iterate search until empty
+        while length(node_que) > 0
+            # get node from head of queue
+            node = node_que[1]
+            deleteat!(node_que, 1)
+
+            if node != nothing
+                println("Search Node $(node.val)")
+
+                # found target
+                if node.val == target
+                    return true
+                end
+
+                # add child nodes to queue
+                push!(node_que, node.left)
+                push!(node_que, node.right)
+            end
+        end
+
+        # not found target
+        return false
+    end
+
     function main()
         # difine tree
         root = Node(1, nothing, nothing)
@@ -32,17 +63,15 @@ module BFS
         root.right.left = Node(6, nothing, nothing)
         root.right.right = Node(7, nothing, nothing)
 
-        # queue
-        node_que = []
-        push!(node_que, root)
+        # target node
+        target = 4
 
-        # pop until empty
-        while length(node_que) > 0
-            # pop from head
-            node = node_que[1]
-            deleteat!(node_que, 1)
-
-
+        # search target node
+        result = search(root, target)
+        if result == true
+            println("Found target node $(target)")
+        else
+            println("Not found")
         end
     end
 end
