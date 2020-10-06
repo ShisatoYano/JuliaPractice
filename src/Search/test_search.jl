@@ -11,6 +11,7 @@ module TestSearch
 
     # external modules
     include("RabinKarpStringSearch/rabin_karp_string_search.jl")
+    include("BreadthFirstSearch/breadth_first_search.jl")
 
     # methods
     function test()
@@ -19,6 +20,9 @@ module TestSearch
                 @test RabinKarpSearch.rabin_karp_search("Hello sunshine", "sun") == 7
                 @test RabinKarpSearch.rabin_karp_search("GEEKS FOR GEEKS", "GEEKS") == 1
                 @test RabinKarpSearch.rabin_karp_search("aaaaaaaaaaaa", "bbb") == -1
+            end
+            @testset "BreadthFirstSearch" begin
+                @test_nowarn BFS.main()
             end
         end
     end
