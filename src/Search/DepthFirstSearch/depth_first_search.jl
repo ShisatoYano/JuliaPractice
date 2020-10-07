@@ -22,26 +22,32 @@ module DFS
         right
     end
 
-    # result flag
-    found = false
+    function search(root, target)
+        # define empty stack
+        node_stack = []
 
-    function traverse(node, target)
-        if node != nothing
-            println(node.val)
-            # found target node
-            if node.val == target
-                global found = true
-            end
-            # search child node recursively
-            if found != true
-                traverse(node.left, target)
-                traverse(node.right, target)
+        # add root node to stack
+        push!(node_stack, root)
+
+        # iterate search until empty
+        while length(node_stack) > 0
+            # get node from tail of stack
+            node = node_stack[end]
+            pop!(node_stack)
+
+            if node != nothing
+                println("Search Node $(node.val)")
+
+                # found target
+                if node.val == target
+                    return true
+                end
+
+                # add child nodes to stack
+                push!(node_stack, node.left)
+                push!(node_stack, node.right)
             end
         end
-    end
-
-    function search(root, target)
-        traverse(root, target)
     end
 
     function main()
