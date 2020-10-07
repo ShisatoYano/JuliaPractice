@@ -12,6 +12,7 @@ module TestSearch
     # external modules
     include("RabinKarpStringSearch/rabin_karp_string_search.jl")
     include("BreadthFirstSearch/breadth_first_search.jl")
+    include("DepthFirstSearch/depth_first_search.jl")
 
     # methods
     function test()
@@ -23,6 +24,9 @@ module TestSearch
             end
             @testset "BreadthFirstSearch" begin
                 @test_nowarn BFS.main()
+            end
+            @testset "DepthFirstSearch" begin
+                @test_nowarn DFS.main()
             end
         end
     end
