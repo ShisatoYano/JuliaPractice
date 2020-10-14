@@ -42,10 +42,22 @@ module HCS
         (3, 2, 3, 2, 1, 2, 1, 0, 1)
     )
 
-    function main()
-        board = [9, 7, 8, 3, 6, 5, 4, 1, 2]
+    # distance to goal
+    function get_distance(board)
+        dist = 0
+        for i in 1:9
+            panel = board[i]
+            if panel != 0
+                dist += distance[panel+1][i]
+            end
+        end
+        return dist
+    end
 
-        println(distance)
+    function main()
+        board = [8, 6, 7, 2, 5, 4, 3, 0, 1]
+
+        println(get_distance(board))
     end
 end
 

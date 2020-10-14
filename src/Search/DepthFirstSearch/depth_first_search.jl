@@ -51,7 +51,7 @@ module DFS
     end
 
     function main()
-        # difine tree
+        # define tree
         root = Node(1, nothing, nothing)
         root.left = Node(2, nothing, nothing)
         root.right = Node(5, nothing, nothing)
