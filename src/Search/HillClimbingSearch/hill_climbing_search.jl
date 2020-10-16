@@ -58,16 +58,38 @@ module HCS
 
     # hill clibming search
     function search(board, space, cost, history)
+        # reached goal
         if board == goal
+            for h in history
+                println(h)
+            end
+            println("Moves count = $(length(history))")
             return true
         else
             buffer = []
+            # define each pattern of next phase
             for i in adjacent[space]
                 panel = board[i+1]
-                b_tmp = board # need to copy
-                b_tmp[space] = b_tmp[i+1]
-                b_tmp[i+1] = 0
-                println(panel,"",i)
+                b = [p for p in board]
+                b[space] = b[i+1]
+                b[i+1] = 0
+                # add only new pattern to history
+                if (b in history) == false
+                    c = cost - distance[panel+1][i+1] + distance[panel+1][space]
+                    # phase pattern, adjacent by space, cost
+                    push!(buffer, (b, i+1, c))
+                end
+            end
+            # select phase has minimum cost
+            sort!(buffer, lt=(x, y)->x[3] < y[3])
+            # buf = (phase, space, cost)
+            for buf in buffer
+                push!(history, buf[1])
+                # recursive
+                if search(buf[1], buf[2], buf[3], history) == true
+                    return true
+                end
+                pop!(history)
             end
         end
         return false
@@ -77,7 +99,7 @@ module HCS
         # initial board
         b = [8, 6, 7, 2, 5, 4, 3, 0, 1]
 
-        search(b, findall(x->x == 0, b)[1], get_distance(b), [b])
+        @time search(b, findall(x->x == 0, b)[1], get_distance(b), [b])
     end
 end
 
