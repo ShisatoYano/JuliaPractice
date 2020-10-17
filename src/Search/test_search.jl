@@ -13,6 +13,7 @@ module TestSearch
     include("RabinKarpStringSearch/rabin_karp_string_search.jl")
     include("BreadthFirstSearch/breadth_first_search.jl")
     include("DepthFirstSearch/depth_first_search.jl")
+    include("HillClimbingSearch/hill_climbing_search.jl")
 
     # methods
     function test()
@@ -27,6 +28,9 @@ module TestSearch
             end
             @testset "DepthFirstSearch" begin
                 @test_nowarn DFS.main()
+            end
+            @testset "HillClimbingSearch" begin
+                @test_nowarn HCS.main()
             end
         end
     end
