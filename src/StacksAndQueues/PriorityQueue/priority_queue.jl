@@ -13,14 +13,13 @@ module PQueue
     # move added node to root
     function upheap(buffer, n)
         while true
-            p = Int(trunc((n - 1)/2)) + 1
-            println("$(buffer), $(buffer[p]), $(buffer[n])")
-            if (p < -1) || (buffer[p] <= buffer[n])
+            p = Int(trunc((n - 1)/2))
+            if (p < -1) || (buffer[p+1] <= buffer[n+1])
                 break
             end
-            tmp = buffer[n]
-            buffer[n] = buffer[p]
-            buffer[p] = tmp
+            tmp = buffer[n+1]
+            buffer[n+1] = buffer[p+1]
+            buffer[p+1] = tmp
             n = p
         end
     end
@@ -29,8 +28,7 @@ module PQueue
     # after adding, sort as upheap
     function push(buffer, data)
         push!(buffer, data)
-        upheap(buffer, length(buffer))
-        println(buffer)
+        upheap(buffer, length(buffer)-1)
     end
 
     function main()
