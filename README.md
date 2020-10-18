@@ -27,6 +27,7 @@ Require the following packages.
 * JSON 0.21.0
 * PyPlot 2.9.0
 * Statistics
+* StatsBase
 
 Require the following version of Python and libraries.
 * Python 3.8.3
