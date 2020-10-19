@@ -5,7 +5,7 @@ priority_queue:
 - Date: 2020-10-18
 =#
 
-module PQueue
+module PQ
     using StatsBase
 
     buffer = []
@@ -88,6 +88,6 @@ module PQueue
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    using .PQueue
-    PQueue.main()
+    using .PQ
+    PQ.main()
 end
