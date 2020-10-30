@@ -14,7 +14,10 @@ Board as 8 puzzle
 6 7 8
 =#
 
-module BFS
+module BestFS
+    # using priority queue
+    include("../../StacksAndQueues/PriorityQueue/priority_queue.jl")
+
     # adjacent node
     const adjacent = (
         (1, 3),       # 0
@@ -43,6 +46,14 @@ module BFS
 
     const goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 
+    # define state
+    mutable struct State
+        board
+        space
+        prev
+        cost
+    end
+
     # distance to goal
     function get_distance(board)
         dist = 0
@@ -58,10 +69,13 @@ module BFS
     function main()
         # initial board
         b = [8, 6, 7, 2, 5, 4, 3, 0, 1]
+
+        # priority queue
+        q = PQ
     end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    using .BFS
-    BFS.main()
+    using .BestFS
+    BestFS.main()
 end
