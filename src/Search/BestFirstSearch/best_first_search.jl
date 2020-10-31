@@ -14,10 +14,7 @@ Board as 8 puzzle
 6 7 8
 =#
 
-module BestFS
-    # using priority queue
-    include("../../StacksAndQueues/PriorityQueue/priority_queue.jl")
-
+module BestFirstSearch
     # adjacent node
     const adjacent = (
         (1, 3),       # 0
@@ -54,6 +51,15 @@ module BestFS
         cost
     end
 
+    # queue
+    queue = []
+
+    # add data to tail of queue
+    # after adding, sort by upheap
+    function push(queue, data)
+        push!(queue, data)
+    end
+
     # distance to goal
     function get_distance(board)
         dist = 0
@@ -66,16 +72,37 @@ module BestFS
         return dist
     end
 
+    function set_cost(state)
+        if state.prev == nothing
+            state.cost = get_distance(state.board)
+        else
+            panel = state.board[state.prev.space]
+            state.cost = state.prev.cost - distance[panel+1][state.space] + distance[panel+1][state.prev.space]
+        end
+    end
+
+    function get_cost_diff(state_1, state_2)
+        return state_1.cost - state_2.cost
+    end
+
+    function search(start)
+        # initial state
+        init_state = State(start, findall(x->x == 0, start)[1], nothing, 0)
+        set_cost(init_state)
+        push(queue, init_state)
+    end
+
     function main()
         # initial board
-        b = [8, 6, 7, 2, 5, 4, 3, 0, 1]
+        start = [8, 6, 7, 2, 5, 4, 3, 0, 1]
 
-        # priority queue
-        q = PQ
+        # best first search
+        search(start)
     end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    using .BestFS
-    BestFS.main()
+    using .BestFirstSearch
+    bfs = BestFirstSearch
+    bfs.main()
 end
