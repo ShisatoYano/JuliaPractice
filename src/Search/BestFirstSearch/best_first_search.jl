@@ -43,7 +43,7 @@ module BestFirstSearch
 
     const goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 
-    # define state
+    # state of node
     mutable struct State
         board
         space
@@ -54,10 +54,64 @@ module BestFirstSearch
     # queue
     queue = []
 
+    # move added node to root
+    function upheap(queue, n)
+        while true
+            # index of parent node
+            p = Int(trunc((n - 1)/2))
+            if (p < -1) || (queue[p+1].cost <= queue[n+1].cost)
+                break
+            end
+            tmp = queue[n+1]
+            queue[n+1] = queue[p+1]
+            queue[p+1] = tmp
+            n = p
+        end
+    end
+
+    # move root node to leaf
+    function downheap(queue, n)
+        len = length(queue)
+        while true
+            # index of child node
+            c = 2 * n + 1
+            if c >= len
+                break
+            end
+            # exchange parent node and smaller cost child
+            if (c + 1) < len
+                if queue[c+1].cost > queue[c+2].cost
+                    c += 1
+                end
+            end
+            if queue[n+1].cost <= queue[c+1].cost
+                break
+            end
+            tmp = queue[n+1]
+            queue[n+1] = queue[c+1]
+            queue[c+1] = tmp
+            n = c
+        end
+    end
+
     # add data to tail of queue
     # after adding, sort by upheap
     function push(queue, data)
         push!(queue, data)
+        upheap(queue, length(queue)-1)
+    end
+
+    # get and remove minimum cost node from queue
+    function pop(queue)
+        min_node = queue[1]
+        last_node = queue[end]
+        deleteat!(queue, length(queue))
+        if length(queue) > 0
+            # create heap again
+            queue[1] = last_node
+            downheap(queue, 0)
+        end
+        return min_node
     end
 
     # distance to goal
@@ -90,6 +144,27 @@ module BestFirstSearch
         init_state = State(start, findall(x->x == 0, start)[1], nothing, 0)
         set_cost(init_state)
         push(queue, init_state)
+
+        # hash table to check same state
+        state_table = Dict{Tuple, Bool}()
+        state_table[Tuple(start)] = true
+
+        while length(queue) > 0
+            min_node = pop(queue)
+            for i in adjacent[min_node.space]
+                b = [p for p in min_node.board]
+                b[min_node.space] = b[i+1]
+                b[i+1] = 0
+                key = Tuple(b)
+                if haskey(state_table, key) == false
+                    s = State(b, i+1, min_node, 0)
+                    set_cost(s)
+                    if b == goal
+                    end
+                end
+            end
+            break
+        end
     end
 
     function main()
