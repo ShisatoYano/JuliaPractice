@@ -54,6 +54,9 @@ module BestFirstSearch
     # queue
     queue = []
 
+    # moves counter
+    counter = 0
+
     # move added node to root
     function upheap(queue, n)
         while true
@@ -139,6 +142,14 @@ module BestFirstSearch
         return state_1.cost - state_2.cost
     end
 
+    function show_history(state)
+        if state != nothing
+            show_history(state.prev)
+            println("Board:$(state.board) Cost:$(state.cost)")
+            global counter += 1
+        end
+    end
+
     function search(start)
         # initial state
         init_state = State(start, findall(x->x == 0, start)[1], nothing, 0)
@@ -160,10 +171,14 @@ module BestFirstSearch
                     s = State(b, i+1, min_node, 0)
                     set_cost(s)
                     if b == goal
+                        show_history(s)
+                        println("Moves count = $(counter)")
+                        return
                     end
+                    push(queue, s)
+                    state_table[key] = true
                 end
             end
-            break
         end
     end
 
@@ -172,7 +187,7 @@ module BestFirstSearch
         start = [8, 6, 7, 2, 5, 4, 3, 0, 1]
 
         # best first search
-        search(start)
+        @time search(start)
     end
 end
 
