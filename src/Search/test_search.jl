@@ -14,6 +14,7 @@ module TestSearch
     include("BreadthFirstSearch/breadth_first_search.jl")
     include("DepthFirstSearch/depth_first_search.jl")
     include("HillClimbingSearch/hill_climbing_search.jl")
+    include("BestFirstSearch/best_first_search.jl")
 
     # methods
     function test()
@@ -31,6 +32,9 @@ module TestSearch
             end
             @testset "HillClimbingSearch" begin
                 @test_nowarn HCS.main()
+            end
+            @testset "BestFirstSearch" begin
+                @test_nowarn BestFirstSearch.main()
             end
         end
     end
