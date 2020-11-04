@@ -134,6 +134,27 @@ module AStar
         return dist
     end
 
+    function set_cost(state)
+        if state.prev == nothing
+            state.cost = state.move + get_distance(state.board)
+        else
+            panel = state.board[state.prev.space]
+            state.cost = state.prev.cost + 1 - distance[panel+1][state.space] + distance[panel+1][state.prev.space]
+        end
+    end
+
+    function get_cost_diff(state_1, state_2)
+        return state_1.cost - state_2.cost
+    end
+
+    function show_history(state)
+        if state != nothing
+            show_history(state.prev)
+            println("Board:$(state.board) Cost:$(state.cost)")
+            global counter += 1
+        end
+    end
+
     function search(start)
 
     end
