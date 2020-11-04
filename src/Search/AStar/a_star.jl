@@ -62,6 +62,78 @@ module AStar
     const OPEN = 1
     const CLOSE = 0
 
+    # move added node to root
+    function upheap(queue, n)
+        while true
+            # index of parent node
+            p = Int(trunc((n - 1)/2))
+            if (p < -1) || (queue[p+1].cost <= queue[n+1].cost)
+                break
+            end
+            tmp = queue[n+1]
+            queue[n+1] = queue[p+1]
+            queue[p+1] = tmp
+            n = p
+        end
+    end
+
+    # move root node to leaf
+    function downheap(queue, n)
+        len = length(queue)
+        while true
+            # index of child node
+            c = 2 * n + 1
+            if c >= len
+                break
+            end
+            # exchange parent node and smaller cost child
+            if (c + 1) < len
+                if queue[c+1].cost > queue[c+2].cost
+                    c += 1
+                end
+            end
+            if queue[n+1].cost <= queue[c+1].cost
+                break
+            end
+            tmp = queue[n+1]
+            queue[n+1] = queue[c+1]
+            queue[c+1] = tmp
+            n = c
+        end
+    end
+
+    # add data to tail of queue
+    # after adding, sort by upheap
+    function push(queue, data)
+        push!(queue, data)
+        upheap(queue, length(queue)-1)
+    end
+
+    # get and remove minimum cost node from queue
+    function pop(queue)
+        min_node = queue[1]
+        last_node = queue[end]
+        deleteat!(queue, length(queue))
+        if length(queue) > 0
+            # create heap again
+            queue[1] = last_node
+            downheap(queue, 0)
+        end
+        return min_node
+    end
+
+    # distance to goal
+    function get_distance(board)
+        dist = 0
+        for i in 1:9
+            panel = board[i]
+            if panel != 0
+                dist += distance[panel+1][i]
+            end
+        end
+        return dist
+    end
+
     function search(start)
 
     end
