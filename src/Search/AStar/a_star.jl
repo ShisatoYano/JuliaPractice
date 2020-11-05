@@ -156,7 +156,16 @@ module AStar
     end
 
     function search(start)
+        # initail state
+        init_state = State(start, findall(x->x == 0, start)[1], nothing, 0, OPEN, 0)
+        set_cost(init_state)
+        push(queue, init_state)
 
+        # hash table to check same state
+        state_table = Dict{Tuple, State}()
+        state_table[Tuple(start)] = init_state
+
+        println(state_table)
     end
 
     function main()
